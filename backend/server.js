@@ -10,13 +10,27 @@ const app = express();
 //connect to DB
 connectDB();
 
-// Middleware
-app.use(cors());
+//allowed origins for CORS
+const allowedOrigins = [
+    "http://localhost:5000", //local frontend
+    "https://mini-crm-wine.vercel.app" //production frontend
+];
+
+//Middleware
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+}));
 app.use(express.json());
 app.use('/api/leads', leadRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
-// Test route
 app.get("/", (req, res) => {
     res.send("API is running...");
 });
