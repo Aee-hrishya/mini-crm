@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import { FaUsers, FaChartLine } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 const COLORS = ["#3b82f6", "#facc15", "#a855f7", "#22c55e"];
 
@@ -31,7 +32,11 @@ const DashboardPage = () => {
     };
 
     if (!data) {
-        return <div className="p-6">Loading...</div>;
+        return (
+            <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50">
+                <ClipLoader size={40} color="#2563eb" />
+            </div>
+        );
     }
 
     const statusData = data?.statusDistribution?.map((i) => ({
