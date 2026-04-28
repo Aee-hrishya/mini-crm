@@ -19,7 +19,7 @@ router.post("/", createLead);
 router.get("/", getLeads);
 router.post("/:id", updateLead);
 router.get("/:id", getLeadById);
-router.post("/:id/status", updateStatus);
+router.put("/:id/status", updateStatus);
 
 //notes
 router.post("/:id/notes", addNote);
