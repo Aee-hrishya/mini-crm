@@ -18,9 +18,14 @@ const CreateLeadPage = () => {
 
                 {/* FORM CARD */}
                 <div className="bg-white rounded-xl shadow-md p-6">
-                    <h1 className="text-2xl font-semibold text-gray-800 mb-6">
-                        New Lead
-                    </h1>
+                    <div className="mb-3">
+                        <h1 className="text-xl font-semibold text-gray-800">
+                            Lead Information
+                        </h1>
+                        <p className="text-sm text-gray-500">
+                            Enter details of the new lead
+                        </p>
+                    </div>
 
                     <LeadForm />
                 </div>

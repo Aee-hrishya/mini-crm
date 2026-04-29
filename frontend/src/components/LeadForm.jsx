@@ -20,8 +20,6 @@ const LeadForm = () => {
             source: "",
         },
 
-        // ✅ REMOVE validateOnChange/Blur (default is true)
-
         validationSchema: Yup.object({
             name: Yup.string().required("Name is required"),
             phone: Yup.string()
@@ -71,132 +69,155 @@ const LeadForm = () => {
     };
 
     return (
-        <form onSubmit={formik.handleSubmit} className="space-y-4">
+        <form onSubmit={formik.handleSubmit} className="space-y-6">
+            {/* GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-            {/* Name */}
-            <div>
-                <input
-                    name="name"
-                    placeholder="Full Name *"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.name}
-                    className={getInputClass("name")}
-                />
-                {formik.touched.name && formik.errors.name && (
-                    <p className="text-red-500 text-sm">{formik.errors.name}</p>
-                )}
+                {/* Name */}
+                <div>
+                    <label className="text-sm font-medium text-gray-600">
+                        Full Name *
+                    </label>
+                    <input
+                        name="name"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.name}
+                        className={getInputClass("name") + " mt-1"}
+                    />
+                    {formik.touched.name && formik.errors.name && (
+                        <p className="text-red-500 text-xs mt-1">{formik.errors.name}</p>
+                    )}
+                </div>
+
+                {/* Phone */}
+                <div>
+                    <label className="text-sm font-medium text-gray-600">
+                        Phone Number *
+                    </label>
+                    <input
+                        name="phone"
+                        onChange={phoneChangeHandler}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.phone}
+                        className={getInputClass("phone") + " mt-1"}
+                    />
+                    {formik.touched.phone && formik.errors.phone && (
+                        <p className="text-red-500 text-xs mt-1">{formik.errors.phone}</p>
+                    )}
+                </div>
+
+                {/* Email */}
+                <div>
+                    <label className="text-sm font-medium text-gray-600">
+                        Email
+                    </label>
+                    <input
+                        name="email"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        className={getInputClass("email") + " mt-1"}
+                    />
+                    {formik.touched.email && formik.errors.email && (
+                        <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
+                    )}
+                </div>
+
+                {/* Budget */}
+                <div>
+                    <label className="text-sm font-medium text-gray-600">
+                        Budget *
+                    </label>
+                    <input
+                        name="budget"
+                        type="number"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.budget}
+                        className={getInputClass("budget") + " mt-1"}
+                    />
+                    {formik.touched.budget && formik.errors.budget && (
+                        <p className="text-red-500 text-xs mt-1">{formik.errors.budget}</p>
+                    )}
+                </div>
+
+                {/* Location */}
+                <div>
+                    <label className="text-sm font-medium text-gray-600">
+                        Location
+                    </label>
+                    <input
+                        name="location"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.location}
+                        className={getInputClass("location") + " mt-1"}
+                    />
+                </div>
+
+                {/* Property Type */}
+                <div>
+                    <label className="text-sm font-medium text-gray-600">
+                        Property Type *
+                    </label>
+                    <select
+                        name="propertyType"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.propertyType}
+                        className={getInputClass("propertyType") + " mt-1"}
+                    >
+                        <option value="">Select</option>
+                        <option value="1BHK">1BHK</option>
+                        <option value="2BHK">2BHK</option>
+                        <option value="3BHK">3BHK</option>
+                        <option value="Plot">Plot</option>
+                    </select>
+                    {formik.touched.propertyType && formik.errors.propertyType && (
+                        <p className="text-red-500 text-xs mt-1">
+                            {formik.errors.propertyType}
+                        </p>
+                    )}
+                </div>
+
+                {/* Source */}
+                <div className="md:col-span-2">
+                    <label className="text-sm font-medium text-gray-600">
+                        Lead Source *
+                    </label>
+                    <select
+                        name="source"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.source}
+                        className={getInputClass("source") + " mt-1"}
+                    >
+                        <option value="">Select</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Google">Google</option>
+                        <option value="Referral">Referral</option>
+                    </select>
+                    {formik.touched.source && formik.errors.source && (
+                        <p className="text-red-500 text-xs mt-1">
+                            {formik.errors.source}
+                        </p>
+                    )}
+                </div>
+
             </div>
 
-            {/* Phone */}
-            <div>
-                <input
-                    name="phone"
-                    placeholder="Phone Number *"
-                    onChange={phoneChangeHandler}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.phone}
-                    className={getInputClass("phone")}
-                />
-                {formik.touched.phone && formik.errors.phone && (
-                    <p className="text-red-500 text-sm">{formik.errors.phone}</p>
-                )}
-            </div>
-
-            {/* Email */}
-            <div>
-                <input
-                    name="email"
-                    placeholder="Email"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                    className={getInputClass("email")}
-                />
-                {formik.touched.email && formik.errors.email && (
-                    <p className="text-red-500 text-sm">{formik.errors.email}</p>
-                )}
-            </div>
-
-            {/* Budget */}
-            <div>
-                <input
-                    name="budget"
-                    type="number"
-                    placeholder="Budget *"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.budget}
-                    className={getInputClass("budget")}
-                />
-                {formik.touched.budget && formik.errors.budget && (
-                    <p className="text-red-500 text-sm">{formik.errors.budget}</p>
-                )}
-            </div>
-
-            {/* Location */}
-            <div>
-                <input
-                    name="location"
-                    placeholder="Location"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.location}
-                    className={getInputClass("location")}
-                />
-            </div>
-
-            {/* Property Type */}
-            <div>
-                <select
-                    name="propertyType"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.propertyType}
-                    className={getInputClass("propertyType")}
+            {/* SUBMIT */}
+            <div className="flex justify-end">
+                <button
+                    type="submit"
+                    disabled={loading}
+                    className="px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg shadow-sm hover:bg-blue-700 transition disabled:opacity-60"
                 >
-                    <option value="">Select Property Type</option>
-                    <option value="1BHK">1BHK</option>
-                    <option value="2BHK">2BHK</option>
-                    <option value="3BHK">3BHK</option>
-                    <option value="Plot">Plot</option>
-                </select>
-                {formik.touched.propertyType && formik.errors.propertyType && (
-                    <p className="text-red-500 text-sm">
-                        {formik.errors.propertyType}
-                    </p>
-                )}
+                    {loading ? "Creating..." : "Create Lead"}
+                </button>
             </div>
 
-            {/* Source */}
-            <div>
-                <select
-                    name="source"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.source}
-                    className={getInputClass("source")}
-                >
-                    <option value="">Select Source</option>
-                    <option value="Facebook">Facebook</option>
-                    <option value="Google">Google</option>
-                    <option value="Referral">Referral</option>
-                </select>
-                {formik.touched.source && formik.errors.source && (
-                    <p className="text-red-500 text-sm">
-                        {formik.errors.source}
-                    </p>
-                )}
-            </div>
-
-            {/* Submit */}
-            <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition disabled:opacity-60"
-            >
-                {loading ? "Creating..." : "Create Lead"}
-            </button>
         </form>
     );
 };

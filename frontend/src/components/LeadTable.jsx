@@ -73,6 +73,7 @@ const LeadTable = () => {
             headerName: "Actions",
             field: "actions",
             cellRenderer: ActionRenderer,
+            filter: false,
             flex: 1
         }
     ];
