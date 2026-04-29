@@ -30,3 +30,36 @@ A full-stack CRM (Customer Relationship Management) application to manage leads,
 - Node.js
 - Express.js
 - MongoDB (Mongoose)
+
+---
+
+## 📁 Project Structure
+mini-crm/
+│
+├── frontend/ # React application
+├── backend/ # Express API server
+└── README.md # Project documentation
+
+---
+
+## ⚙️ Prerequisites
+
+Ensure you have installed:
+
+- Node.js (v16+ recommended)
+- npm or yarn
+- MongoDB Atlas (or local MongoDB)
+
+---
+
+# 🚀 Setup Instructions
+
+---
+
+## 🔧 Backend Setup
+
+1. Navigate to backend folder:
+
+```bash
+cd backend
+
