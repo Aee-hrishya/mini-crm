@@ -28,11 +28,19 @@ https://mini-crm-wine.vercel.app
 - AG Grid
 - React Router
 - Axios
+- Recharts
+- React Icons
+- React Spinners
+- Formik/Yup
+- React Hot Toast
 
 ### Backend
 - Node.js
 - Express.js
 - MongoDB (Mongoose)
+- MongoDB Atlas
+- Cors
+- Dotenv
 
 ---
 
