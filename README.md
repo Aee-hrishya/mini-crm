@@ -72,7 +72,7 @@ npm install
 
 ```
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb+srv://Hrishikesh:Mimarathi%4069@cluster0.2hcowff.mongodb.net/mini-crm?retryWrites=true&w=majority
 ```
 4. Start backend server
 
