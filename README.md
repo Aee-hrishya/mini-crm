@@ -1,7 +1,10 @@
 # Mini CRM
 
 A full-stack CRM (Customer Relationship Management) application to manage leads, track their progress, and maintain notes. Built with a focus on usability, clean UI, and real-world workflow.
-
+- Live application link:
+```
+https://mini-crm-wine.vercel.app
+```
 ---
 
 ## 🚀 Features
@@ -154,6 +157,6 @@ The application includes a few pre-created leads to demonstrate:
 ---
 
 👤 Author
-Hrishikesh Shinde
+- Hrishikesh Shinde
 
 
