@@ -45,11 +45,12 @@ https://mini-crm-wine.vercel.app
 ---
 
 ## 📁 Project Structure
+```
 mini-crm/
-│
-├── frontend/ # React application
-├── backend/ # Express API server
-└── README.md # Project documentation
+├── frontend/     # React application
+├── backend/      # Express API server
+└── README.md     # Project documentation
+```
 
 ---
 
