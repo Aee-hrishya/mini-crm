@@ -85,3 +85,75 @@ npm run dev
 http://localhost:5000
 ```
 
+---
+
+## 💻 Frontend Setup
+
+1. Open a new terminal and navigate to frontend
+
+```
+cd frontend
+```
+2. install dependencies
+
+```
+npm install
+```
+3. Create a .env file inside frontend/
+
+```
+VITE_API_URL=http://localhost:5000
+```
+4. Start the frontend
+
+```
+npm run dev
+```
+5. Frontend will run on
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔗 API Base URL
+
+Ensure your frontend is configured to use
+
+```
+http://localhost:5000
+```
+
+---
+
+## 🧪 Sample Data
+
+The application includes a few pre-created leads to demonstrate:
+- Dashboard statistics
+- Lead listing
+- Status updates
+- Notes functionality
+
+---
+
+## 📌 Notes
+- Backend must be running before starting frontend
+- MongoDB connection must be active
+- CORS is enabled for local development
+
+---
+
+🔮 Future Improvements
+- Authentication (login/signup)
+- Role-based access control
+- Advanced analytics (charts & graphs)
+- File attachments for leads
+- Notifications & reminders
+
+---
+
+👤 Author
+Hrishikesh Shinde
+
+
