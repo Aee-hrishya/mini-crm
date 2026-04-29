@@ -62,4 +62,26 @@ Ensure you have installed:
 
 ```bash
 cd backend
+```
+2. Install dependencies
+
+```
+npm install
+```
+3. Create a new .env file inside the backend/ folder
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+```
+4. Start backend server
+
+```
+npm run dev
+```
+5. Backend will run on
+
+```
+http://localhost:5000
+```
 
