@@ -50,6 +50,10 @@ const LeadTable = () => {
             valueFormatter: (p) => `₹${Number(p.value).toLocaleString()}`,
             cellClass: "text-right",
         },
+        {
+            headerName: "Property Type",
+            field: 'propertyType',
+        },
         { headerName: "Location", field: "location", flex: 1 },
         { headerName: "Source", field: "source", flex: 1 },
         {
