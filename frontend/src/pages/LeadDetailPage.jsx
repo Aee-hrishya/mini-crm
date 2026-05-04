@@ -124,7 +124,8 @@ const LeadDetailPage = () => {
                         />
                         <DetailItem label="Location" value={lead.location || "-"} />
                         <DetailItem label="Source" value={lead.source || "-"} />
-
+                        <DetailItem label="Property Type" value={lead.propertyType || "-"} />
+                        
                         {/* STATUS */}
                         <div className="relative" ref={dropdownRef}>
                             <p className="text-sm text-gray-500 mb-1">Status</p>
